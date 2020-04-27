@@ -1,0 +1,20 @@
+﻿@model HomeViewModel
+
+
+
+    @foreach (var art in Model.Arts)
+    {
+        <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <img src="@art.ImageThumbnailUrl" alt="NO" />
+                <div class="caption">
+                    <h3>
+                        <a asp-controller="Home" asp-action="Details"
+                           asp-route-id="@art.Id">@art.Name</a>
+                    </h3>
+                    <h4>@art.Price.ToString("c")</h4>
+                </div>
+            </div>
+        </div>
+    }
+
